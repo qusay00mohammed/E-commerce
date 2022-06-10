@@ -24,8 +24,8 @@ class CreateUsersTable extends Migration
             $table->integer('regStatus')->default(0);
             $table->rememberToken();
             $table->timestamps();
-            $table->unsignedBigInteger('photo_id')->nullable();
-            $table->foreign('photo_id')->references('id')->on('photos')->onDelete('cascade');
+            // $table->unsignedBigInteger('photo_id')->nullable();
+            // $table->foreign('photo_id')->references('id')->on('photos')->onDelete('cascade');
         });
     }
 
