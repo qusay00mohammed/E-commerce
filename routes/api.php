@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+// use App\Http\Controllers\API\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,5 +16,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+  return $request->user();
+});
+
+
+Route::group(['namespace' => 'API'], function () {
+  // Index & Store & Show & Update & Delete
+  route::apiResource('cat_api', 'CategoryController');
 });

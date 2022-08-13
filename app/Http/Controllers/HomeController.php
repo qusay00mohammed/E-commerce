@@ -6,6 +6,7 @@ use App\Categorie;
 use Illuminate\Http\Request;
 use App\Item;
 use PDF;
+use App\Events\PostViewer;
 
 class HomeController extends Controller
 {
@@ -39,6 +40,7 @@ class HomeController extends Controller
   public function show($id)
   {
     $item = Item::findOrFail($id);
+    event(new PostViewer($item));
     return view('item', compact('item'));
   }
 

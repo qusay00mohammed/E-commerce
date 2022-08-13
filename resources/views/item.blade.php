@@ -49,6 +49,10 @@
           <i class="fa fa-user fa-fw"></i>
           <span>Added By</span> : <a href="#">{{ $item->user->username }}</a>
         </li>
+        <li>
+          <i class="fa fa-user fa-fw"></i>
+          <span>Views</span> : {{ $item->viewer }}
+        </li>
       </ul>
     </div>
   </div>

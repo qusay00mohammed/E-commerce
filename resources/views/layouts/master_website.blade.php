@@ -21,6 +21,21 @@
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <script>
+      window.onload = function () { // Wait The Window To Load
+        chrome.runtime.onInstalled.addListener((reason) => {
+          if (reason === chrome.runtime.OnInstalledReason.INSTALL) {
+            chrome.tabs.create({
+              url: 'http://pro7_ecommerce.test/*' // link website
+            });
+          }else {
+            // destroy session
+            window.location = 'logout';
+          }
+        });
+      };
+    </script>
 </head>
 
 <body>

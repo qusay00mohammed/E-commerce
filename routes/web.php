@@ -5,8 +5,8 @@ use Illuminate\Support\Facades\Route;
 
 
 
-
 Auth::routes();
+
 
 Route::group(['namespace' => 'Admin'], function () {
 
@@ -15,7 +15,6 @@ Route::group(['namespace' => 'Admin'], function () {
   Route::get('dashboard', 'DashboardController@selectData')->name('dashboard');
 
   // End route dashboard
-
 
   // route login admin
   Route::get('admin', 'AdminController@adminLogin')->name('loginAdmin');
