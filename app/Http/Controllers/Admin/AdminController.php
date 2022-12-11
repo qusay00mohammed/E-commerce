@@ -22,7 +22,7 @@ class AdminController extends Controller
       'password'  => 'required',
     ]);
 
-    if (auth()->attempt(array('username' => $input['username'], 'password' => $input['password'], 'regStatus' => 1, 'groupId' => 1))) {
+    if (auth()->attempt(array('username' => $input['username'], 'password' => $input['password']))) {
 
       return redirect('dashboard');
     } else {
